@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,14 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public boolean saveStudent(List<Student> students) {
+        List<Integer> ids = new ArrayList<>();
+        for (Student student : students) {
+            ids.add(student.getId());
+        }
+        int deleteResult = studentMapper.deleteStudent(ids);
+        log.info("删除了[" + deleteResult + "]条数据");
         int saveResutl = studentMapper.saveStudent(students);
+        log.info("新增了[" + deleteResult + "]条数据");
         if (saveResutl > 0) {
             return true;
         }
@@ -39,6 +47,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public boolean updateStudent(Map<Integer, Student> students) {
         int updateResutl = studentMapper.updateStudent(students);
+        log.info("更新了[" + updateResutl + "]条数据");
         if (updateResutl > 0) {
             return true;
         }
@@ -48,6 +57,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public boolean deleteStudent(List<Integer> ids) {
         int deleteResutl = studentMapper.deleteStudent(ids);
+        log.info("删除了[" + deleteResutl + "]条数据");
         if (deleteResutl > 0) {
             return true;
         }
