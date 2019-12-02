@@ -1,6 +1,5 @@
 package com.sinosoft.demo.interfaces.controller;
 
-import com.sinosoft.demo.domain.entity.FtpEntity;
 import com.sinosoft.demo.domain.util.FtpUtil;
 import com.sinosoft.demo.interfaces.util.Result;
 import io.swagger.annotations.Api;
