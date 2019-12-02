@@ -12,6 +12,10 @@ spring:
     port: 6379
     database: 8
     password: root
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 mybatis:
   mapper-locations: classpath*:**.*/*.xml
@@ -20,3 +24,10 @@ logging:
   level:
     com.sinosoft.mybatis.mapper: debug
 
+ftp:
+  host: 39.106.191.211
+  port: 22
+  username: sftpuser
+  password: Whp/0610
+  remoteFilePath: /upload
+  localFilePath: /home/appian/Downloads/
