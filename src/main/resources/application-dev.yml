@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://39.106.191.211:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&useSSL=false&allowMultiQueries=true
     username: root
-    password: Whp/0620
+    password: Whp/0610
   redis:
     host: 39.106.191.211
     port: 6379
